@@ -14,6 +14,25 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
     <title>Snack02 - Email</title>
 </head>
 <body>
+    <!-- form  -->
+    <form action="" method="get">
+        <div>
+            <label for="name">Insert Name</label>
+            <input type="text" name="name">
+        </div>
+
+        <div>
+            <label for="mail">Insert Email</label>
+            <input type="text" name="email">
+        </div>
+        
+        <div>
+            <label for="age">Insert age</label>
+            <input type="text" name="age">
+        </div>
+
+        <button>Invia</button>
+    </form>
     
 </body>
 </html>
