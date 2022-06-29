@@ -43,6 +43,18 @@ $posts = [
     ],
 ];
 
+// store all dates in var
+$dates = array_keys($posts);
+//var_dump($dates);
+
+
+//cicle for
+for ($i=0; $i<count($posts); $i++){
+    // print dates
+    echo "<div> {$dates[$i]} </div>";
+    $post = $posts[$dates[$i]];
+}
+
 ?>
 
 <!DOCTYPE html>
