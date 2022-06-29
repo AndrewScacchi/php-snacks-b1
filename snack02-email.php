@@ -3,6 +3,28 @@
 Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 */
 
+if(isset($_GET["name"]) && isset($_GET["email"]) && isset($_GET["age"])){
+    // set var
+    $name = $_GET["name"];
+    $email = $_GET["email"];
+    $age = $_GET["age"];
+
+    // position of @
+    $position_at = strpos($email, '@');
+
+    // set . position after @
+    $position_dot = strpos($email, '.', $position_at);
+
+    if (strlen($name)>3 && is_numeric($age) == true && $position_at !== false &&   $position_dot !== false) {
+        $message = 'Accesso Granted';
+        } else {
+        $message = 'Accesso NOT Granted';
+    }
+    
+} else {
+    $message = 'Insert data';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +55,9 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 
         <button>Invia</button>
     </form>
+
+    <!-- message to user -->
+    <p> <?= $message ?> </p>
     
 </body>
 </html>
