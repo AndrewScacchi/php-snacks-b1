@@ -53,6 +53,12 @@ for ($i=0; $i<count($posts); $i++){
     // print dates
     echo "<div> {$dates[$i]} </div>";
     $post = $posts[$dates[$i]];
+    for ($a=0; $a<count($post); $a++){
+        $postData = $post[$a];
+        echo "<div> {$postData['title']} </div>";
+        echo "<div> {$postData['author']} </div>";
+        echo "<div> {$postData['text']} </div>";
+    }
 }
 
 ?>
